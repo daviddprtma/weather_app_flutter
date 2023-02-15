@@ -55,7 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future login_db() async {
     final conn = await MySqlConnection.connect(ConnectionSettings(
-        host: '10.0.2.2', port: 3306, user: 'root', db: 'weather_app'));
+        host: 'sql204.epizy.com',
+        port: 3306,
+        user: 'epiz_33595064',
+        password: 'JDoCtln1ooghOu',
+        db: 'epiz_33595064_weather'));
 
     var name_db = name.text;
     var password_db = password.text;
@@ -146,9 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 50),
             InkWell(
-              onTap: () => {
-                login_db()
-              },
+              onTap: () => {login_db()},
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.symmetric(vertical: 15),

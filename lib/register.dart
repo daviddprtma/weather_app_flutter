@@ -18,11 +18,11 @@ class _registerState extends State<register> {
 
   Future login_db() async {
     final conn = await MySqlConnection.connect(ConnectionSettings(
-      host: '10.0.2.2',
-      port: 3306,
-      user: 'root',
-      db: 'weather_app',
-    ));
+        host: 'sql204.epizy.com',
+        port: 3306,
+        user: 'epiz_33595064',
+        password: 'JDoCtln1ooghOu',
+        db: 'epiz_33595064_weather'));
     var result = await conn.query(
         'insert into user (name, password, email) values (?, ?, ?)',
         [name.text, password.text, email.text]);
